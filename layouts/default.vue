@@ -2,10 +2,10 @@
   <div data-theme="light" class="h-[100vh] bg-base-200 relative
  ">
     <header>
-      <div class="navbar bg-base-100 border-b-2" :class="{'': !isMobile}">
-        <div class="navbar" :class="{'w-8/12': !isMobile}">
+      <div class="bg-base-100 border-b-2 p-0" :class="{'': !isMobile}">
+        <div class="navbar p-0" :class="{'w-8/12': !isMobile}">
           <div class="flex-1">
-            <a href="#" class="btn btn-ghost text-xl">jidonghao</a>
+            <a href="/" class="btn btn-ghost text-xl py-0">jidonghao</a>
           </div>
           <div class="flex-none">
             <button class="btn btn-square btn-ghost" @click="toggleMobileMenu" v-show="isMobile">
@@ -15,8 +15,9 @@
                       d="M4 6h16M4 12h16M4 18h16"></path>
               </svg>
             </button>
-            <ul class="menu menu-dropdown" :class="{'menu-horizontal': !isMobile}" v-show="!isMobile || mobileMenuOpen">
-              <li><a @click="navigateTo('关于')">关于</a></li>
+            <ul class="menu menu-dropdown py-0" :class="{'menu-horizontal': !isMobile}"
+                v-show="!isMobile || mobileMenuOpen">
+              <li><a href="/about">关于</a></li>
               <li><a @click="navigateTo('联系')">联系</a></li>
               <li><a @click="navigateTo('列表')">列表</a></li>
             </ul>
@@ -25,10 +26,19 @@
       </div>
     </header>
 
-    <main :class="{'w-8/12': !isMobile}" class="m-auto min-h-[50vh] bg-base-100 px-10 pt-2 flex">
+
+    <main class="m-auto flex" :class="{'w-8/12': !isMobile,'flex-col':isMobile}">
       <!-- Main content goes here -->
-      <NuxtPage :class="{'w-4/5':!isMobile}"/>
-      <aside class="w-1/5 ml-2" :class="{'hidden':isMobile}">
+      <div class="bg-base-100 px-2" :class="{'w-4/5 px-10 min-h-[50vh]':!isMobile, ' min-h-[30vh]':isMobile}">
+        <div class="text-sm breadcrumbs">
+          <ul>
+            <li><a class="btn btn-xs">Home</a></li>
+          </ul>
+        </div>
+        <NuxtPage/>
+      </div>
+
+      <aside class="w-1/5 pt-2 bg-base-100 px-2" :class="{'ml-0 mt-2 w-[100%]':isMobile, 'ml-2': !isMobile}">
         侧边栏
       </aside>
     </main>
@@ -53,11 +63,6 @@ export default {
       mobileMenuOpen.value = !mobileMenuOpen.value;
     };
 
-    const navigateTo = (page) => {
-      // 在这里实现页面导航逻辑
-      console.log(`跳转到${page}页面`);
-    };
-
     const checkMobile = () => {
       isMobile.value = window.innerWidth <= 768;
     };
@@ -75,7 +80,6 @@ export default {
       isMobile,
       mobileMenuOpen,
       toggleMobileMenu,
-      navigateTo,
     };
   },
 };
