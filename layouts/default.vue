@@ -27,7 +27,7 @@
     </header>
 
 
-    <main class="m-auto flex justify-center" :class="{'w-8/12': !isMobile,'flex-col':isMobile}">
+    <main v-if="!$slots.custom" class="m-auto flex justify-center" :class="{'w-8/12': !isMobile,'flex-col':isMobile}">
       <!-- Main content goes here -->
       <div class="bg-base-100 px-2" :class="{'w-4/5 px-10 min-h-[50vh]':!isMobile, ' min-h-[30vh]':isMobile}">
 <!--        <div class="text-sm breadcrumbs">-->
@@ -42,6 +42,7 @@
         侧边栏
       </aside>
     </main>
+    <slot v-else name="custom"/>
 
     <footer class="footer p-10 bg-base-100 text-base-content">
       <aside class="m-auto" :class="{'w-8/12': !isMobile}">
