@@ -5,7 +5,7 @@
       <div class="bg-base-100 border-b-2 p-0" :class="{'': !isMobile}">
         <div class="navbar p-0" :class="{'w-8/12': !isMobile}">
           <div class="flex-1">
-            <a href="/" class="btn btn-ghost text-xl py-0">jidonghao</a>
+            <a href="/" class="btn btn-ghost text-xl py-0">Hown</a>
           </div>
           <div class="flex-none">
             <button class="btn btn-square btn-ghost" @click="toggleMobileMenu" v-show="isMobile">
@@ -18,8 +18,8 @@
             <ul class="menu menu-dropdown py-0" :class="{'menu-horizontal': !isMobile}"
                 v-show="!isMobile || mobileMenuOpen">
               <li><a href="/about">关于</a></li>
-              <li><a @click="navigateTo('联系')">联系</a></li>
-              <li><a @click="navigateTo('列表')">列表</a></li>
+              <li><a href="/contact">联系</a></li>
+              <li><a href="/list">列表</a></li>
             </ul>
           </div>
         </div>
@@ -27,14 +27,14 @@
     </header>
 
 
-    <main class="m-auto flex" :class="{'w-8/12': !isMobile,'flex-col':isMobile}">
+    <main class="m-auto flex justify-center" :class="{'w-8/12': !isMobile,'flex-col':isMobile}">
       <!-- Main content goes here -->
       <div class="bg-base-100 px-2" :class="{'w-4/5 px-10 min-h-[50vh]':!isMobile, ' min-h-[30vh]':isMobile}">
-        <div class="text-sm breadcrumbs">
-          <ul>
-            <li><a class="btn btn-xs">Home</a></li>
-          </ul>
-        </div>
+<!--        <div class="text-sm breadcrumbs">-->
+<!--          <ul>-->
+<!--            <li><a class="btn btn-xs">Home</a></li>-->
+<!--          </ul>-->
+<!--        </div>-->
         <NuxtPage/>
       </div>
 

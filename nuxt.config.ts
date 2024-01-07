@@ -3,6 +3,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss'],
   css: [
-    {src: '~/assets/css/main.scss', lang: 'scss'},
-  ],
+    { src: '~/assets/css/main.scss', lang: 'scss' },
+  ]
 })
