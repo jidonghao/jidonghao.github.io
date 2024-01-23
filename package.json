@@ -26,6 +26,7 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "daisyui": "^4.4.19"
+    "daisyui": "^4.4.19",
+    "theme-change": "^2.5.0"
   }
 }
