@@ -7,18 +7,11 @@
             <a href="/" class="btn btn-ghost text-xl py-0">Hown</a>
           </div>
           <div class="flex-none">
-            <button class="btn btn-square btn-ghost" @click="toggleMobileMenu" v-show="isMobile">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                   class="inline-block w-5 h-5 stroke-current">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
-            </button>
             <ul class="menu menu-dropdown py-0" :class="{'menu-horizontal button-text': !isMobile}"
                 v-show="!isMobile || mobileMenuOpen">
-              <li><a href="/about">关于</a></li>
               <li><a href="/contact">联系</a></li>
-              <li><a href="/list">列表</a></li>
+              <li><a href="/about">关于</a></li>
+<!--              <li><a href="/list">列表</a></li>-->
             </ul>
             <label class="swap swap-rotate">
               <input type="checkbox" data-toggle-theme="dark,light" checked/>
@@ -27,6 +20,13 @@
               <svg class="swap-off fill-current w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/></svg>
             </label>
+            <button class="btn btn-square btn-ghost" @click="toggleMobileMenu" v-show="isMobile">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                   class="inline-block w-5 h-5 stroke-current">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
           </div>
         </div>
       </div>
