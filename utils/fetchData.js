@@ -8,6 +8,7 @@
  * @return {Promise<void>}
  */
 async function fetchData(apiEndpoint, params, watch) {
+    console.time('fetchData')
     const {data, pending, error, refresh} = await useAsyncData(
         'lists',
         () => $fetch(import.meta.env.VITE_APP_BASE_HOST + apiEndpoint, {
@@ -15,7 +16,19 @@ async function fetchData(apiEndpoint, params, watch) {
         }), { watch,initialCache: false }
     )
     const code = data.value?.code || error.value?.statusCode|| 200
-    console.log(code)
+
+    if(import.meta.env.MODE === 'development'){
+        console.group(`🚀 fetchData.js 发起了请求：'${apiEndpoint}', code =`, code)
+        console.log("📥请求参数：", params)
+        console.timeEnd('fetchData')
+        console.log("🔙返回数据：")
+        console.log(data.value)
+        if(data.value?.rows)
+            console.table(data.value.rows)
+        console.groupEnd()
+    }
+
+
     switch (code) {
         case 200:
             break
