@@ -1,7 +1,7 @@
 <template>
   <default>
     <template v-slot:custom>
-      <main class="grid min-h-full place-items-center bg-white sm:py-24 lg:px-4">
+      <main class="grid min-h-full place-items-center sm:py-24 lg:px-4">
         <div class="text-center">
           <p class="text-base font-semibold text-indigo-600">{{ props.error.statusCode || '404' }}</p>
           <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">页面不见了</h1>

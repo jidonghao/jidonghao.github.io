@@ -5,7 +5,21 @@ url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Noto
   font-family: 'Noto Sans SC', sans-serif;
 }
 
-code {
-  font-family: 'Fira Code', monospace;
+pre{
+  border-radius: 4px;
 }
 
+pre[class*="language-"]{
+  background: #1d232a!important;
+}
+
+code {
+  font-family: 'Fira Code', 'Noto Sans SC', monospace;
+  span {
+    font-family: 'Fira Code', 'Noto Sans SC', monospace;
+  }
+}
+
+.toolbar-item {
+  margin-right: 6px;
+}
