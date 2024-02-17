@@ -1,25 +1,26 @@
 @import url('https://fonts.font.im/css2?family=Fira+Code:wght@400;600&family=Noto+Sans+SC:wght@200;400;800&display=swap'),
 url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Noto+Sans+SC:wght@200;400;800&display=swap');
+@import "code";
 
 * {
   font-family: 'Noto Sans SC', sans-serif;
 }
 
-pre{
-  border-radius: 4px;
-}
+//pre{
+//  border-radius: 4px;
+//}
+//
+//pre[class*="language-"]{
+//  background: #1d232a!important;
+//}
 
-pre[class*="language-"]{
-  background: #1d232a!important;
-}
+//.toolbar-item {
+//  margin-right: 6px;
+//}
 
 code {
   font-family: 'Fira Code', 'Noto Sans SC', monospace;
   span {
     font-family: 'Fira Code', 'Noto Sans SC', monospace;
   }
-}
-
-.toolbar-item {
-  margin-right: 6px;
 }

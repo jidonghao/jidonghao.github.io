@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "daisyui": "^4.4.19",
-    "prismjs": "^1.29.0",
+    "highlight.js": "^11.9.0",
     "theme-change": "^2.5.0"
   }
 }

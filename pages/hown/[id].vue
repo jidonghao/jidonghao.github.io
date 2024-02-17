@@ -1,12 +1,12 @@
 <template>
-  <article :id="i" class="prose" v-html="content"/>
+  <article v-highlight class="prose" v-html="content"/>
 </template>
 
 <script setup>
+import 'highlight.js/styles/atom-one-dark.css'
 import { useBlogDetail } from "~/api/asyncApi/blog.js"
 const route = useRoute()
 const {id} = route.params
-import Prism from 'prismjs'
 
 const title = ref("")
 const content = ref("")
@@ -35,22 +35,13 @@ async function getList() {
       .replaceAll("</h2>","</h2><hr class='mb-2'>")
       .replaceAll("<h3>",`<h3 class='text-xl mt-3'>`)
 
-  // 处理代码
-  // contentHtml = contentHtml
-  //     .replaceAll("<pre class=\"","<pre class=\"mockup-code ")
-
   content.value = contentHtml
-
-  nextTick(()=>{
-    Prism.highlightAll()
-    document.querySelectorAll()
-  })
 }
 
 await getList()
 
 </script>
 
-<style >
+<style>
 
 </style>

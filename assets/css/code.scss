@@ -1,0 +1,50 @@
+/* 整个滚动条 */
+[class*=hljs]::-webkit-scrollbar {
+  width: 10px;
+  height: 0.6rem;
+}
+
+/* 滚动条上的滚动滑块,参考： 滚动条样式修改->https://blog.csdn.net/coder_jxd/article/details/124213962 */
+[class*=hljs]::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 32px;
+}
+
+/* 滚动条样式，参考： */
+/* 滚动条轨道 */
+[class*=hljs]::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 32px;
+}
+
+.hljs {
+  font-family: 'Roboto', sans-serif;
+  border-radius: 6px;
+  padding-left: 0 !important;
+  margin-left: 3em !important;
+
+  ul,li {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* 行号相关样式 */
+pre {
+  background-color: #282c34;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 0.2rem;
+
+  .line-numbers {
+    position: absolute;
+    color: #e0e0e0;
+    padding-right: 10px;
+    width: 30px;
+    text-align: right;
+    border-right: 1px solid #c5c5c5;
+    top: 16px;
+    left: 10px;
+  }
+}
