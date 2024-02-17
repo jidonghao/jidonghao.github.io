@@ -1,26 +1,14 @@
-@import url('https://fonts.font.im/css2?family=Fira+Code:wght@400;600&family=Noto+Sans+SC:wght@200;400;800&display=swap'),
-url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Noto+Sans+SC:wght@200;400;800&display=swap');
+@import url('https://fonts.font.im/css2?family=JetBrains+Mono:ital@0;1&family=Noto+Sans+SC:wght@200;400;800&display=swap'),
+url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital@0;1&family=Noto+Sans+SC:wght@200;400;800&display=swap');
 @import "code";
 
 * {
   font-family: 'Noto Sans SC', sans-serif;
 }
 
-//pre{
-//  border-radius: 4px;
-//}
-//
-//pre[class*="language-"]{
-//  background: #1d232a!important;
-//}
-
-//.toolbar-item {
-//  margin-right: 6px;
-//}
-
 code {
-  font-family: 'Fira Code', 'Noto Sans SC', monospace;
+  font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
   span {
-    font-family: 'Fira Code', 'Noto Sans SC', monospace;
+    font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
   }
 }

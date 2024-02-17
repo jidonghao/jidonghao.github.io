@@ -30,6 +30,7 @@
   "dependencies": {
     "daisyui": "^4.4.19",
     "highlight.js": "^11.9.0",
+    "nuxt-icon": "^0.6.8",
     "theme-change": "^2.5.0"
   }
 }

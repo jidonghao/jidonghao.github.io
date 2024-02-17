@@ -12,9 +12,14 @@
 
 /* 滚动条样式，参考： */
 /* 滚动条轨道 */
-[class*=hljs]::-webkit-scrollbar-track {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 32px;
+[class*=hljs]{
+  &::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 32px;
+  }
+}
+span[class*=hljs]{
+  //margin-right: 0.4rem;
 }
 
 .hljs {
@@ -22,7 +27,7 @@
   border-radius: 6px;
   padding-left: 0 !important;
   margin-left: 3em !important;
-
+  word-spacing: 0.5rem;
   ul,li {
     margin: 0;
     padding: 0;

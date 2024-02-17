@@ -1,0 +1,16 @@
+<template>
+  <svg xmlns="http://www.w3.org/2000/svg" :width="props.size" :height="props.size" viewBox="0 0 16 16">
+    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+      <circle cx="8" cy="8" r="6.25"/><path d="M8.25 4.75v3.5l-2.5 2"/>
+    </g>
+  </svg>
+</template>
+
+<script setup>
+const props = defineProps({
+  size:{
+    type:[String,Number],
+    default: 32
+  }
+})
+</script>

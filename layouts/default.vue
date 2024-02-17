@@ -1,5 +1,5 @@
 <template>
-  <div class="relative h-[100vh] overflow-y-scroll z-999">
+  <div class="relative h-[100vh] overflow-y-scroll z-999 scroll-smooth">
     <header class="sticky top-0 w-full z-10 bg-base-100/95 backdrop-blur-md">
       <div class="border-b p-0" :class="{'': !isMobile}">
         <div class="navbar p-0" :class="{'w-8/12': !isMobile}">
