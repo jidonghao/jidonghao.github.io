@@ -6,7 +6,11 @@ export default defineNuxtConfig({
     css: [
         {src: '~/assets/css/main.scss', lang: 'scss'},
     ],
-    vite: {},
+    vite: {
+        build:{
+            target:['edge90','chrome90','firefox90','safari15']
+        }
+    },
     app: {
         head: {
             title: "hown",
