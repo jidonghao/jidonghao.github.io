@@ -30,12 +30,8 @@ export function GetAESKey() {
     })
 }
 
-// TODO: 对访问信息加密
-
 export function updateVisit(pageUrl, blogId = "") {
     useBrowserKeyStore().getFingerprint().then(browserId => {
-        console.log("浏览器指纹：", browserId)
-        console.log("加密key：", useAESKeyStore().getKey())
         const cipherText =
             encryption(useAESKeyStore().getKey())
                 .Encrypt(JSON.stringify({browserId: browserId, pageUrl, blogId, timestamp:new Date().getTime()}))
