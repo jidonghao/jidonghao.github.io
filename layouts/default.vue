@@ -53,9 +53,14 @@
 <script>
 import {ref, onMounted, onBeforeUnmount} from 'vue';
 import {themeChange} from 'theme-change'
-import {PostVisit, updateVisit} from "~/api/asyncApi/visit.js"
+import {GetAESKey} from "~/api/asyncApi/visit.js";
+import {useAESKeyStore} from "~/store/AESKeyStore.js"
+
+const BlogKey = await GetAESKey()
+
 export default {
-  setup() {
+
+ setup() {
     const isMobile = ref(false);
     const mobileMenuOpen = ref(false);
 
@@ -66,6 +71,7 @@ export default {
     const checkMobile = () => {
       isMobile.value = window.innerWidth <= 768;
     };
+
 
     onMounted(() => {
       checkMobile();
