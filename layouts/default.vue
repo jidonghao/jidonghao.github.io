@@ -53,7 +53,7 @@
 <script>
 import {ref, onMounted, onBeforeUnmount} from 'vue';
 import {themeChange} from 'theme-change'
-
+import {PostVisit, updateVisit} from "~/api/asyncApi/visit.js"
 export default {
   setup() {
     const isMobile = ref(false);
