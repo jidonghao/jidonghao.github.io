@@ -25,14 +25,23 @@ function PostVisit(data) {
  * 获取加密接口访问key
  */
 export function GetAESKey() {
-    return FetchData('blog/blogVisit/getKey', null, null);
+    return FetchData('blog/blogVisit/getKey', null, null, 'getKey');
 }
-
+let timer = void 0
 export function updateVisit(pageUrl, blogId = "") {
+    const key = useAESKeyStore().getKey()
+    if(!key) {
+        return false
+    }
     useBrowserKeyStore().getFingerprint().then(browserId => {
         const cipherText =
-            encryption(useAESKeyStore().getKey())
-                .Encrypt(JSON.stringify({browserId: browserId, pageUrl, blogId, timestamp:new Date().getTime()}))
-        PostVisit({data:cipherText})
+            encryption(key)
+                .Encrypt(JSON.stringify({
+                    browserId: browserId,
+                    pageUrl,
+                    blogId,
+                    timestamp: new Date().getTime()
+                }))
+        PostVisit({data: cipherText})
     })
 }

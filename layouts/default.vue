@@ -58,8 +58,6 @@ import {useAESKeyStore} from "~/store/AESKeyStore.js";
 
 const {data} = await GetAESKey()
 
-useAESKeyStore().setKey(data.value)
-
 const isMobile = ref(false);
 const mobileMenuOpen = ref(false);
 
@@ -72,6 +70,8 @@ const checkMobile = () => {
 };
 
 onMounted(() => {
+  useAESKeyStore().setKey(data.value)
+
   checkMobile();
   window.addEventListener('resize', checkMobile);
   themeChange(false);
