@@ -50,46 +50,37 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import {ref, onMounted, onBeforeUnmount} from 'vue';
 import {themeChange} from 'theme-change'
 import {GetAESKey} from "~/api/asyncApi/visit.js";
-import {useAESKeyStore} from "~/store/AESKeyStore.js"
+import {useAESKeyStore} from "~/store/AESKeyStore.js";
 
-const BlogKey = await GetAESKey()
+const {data} = await GetAESKey()
 
-export default {
+useAESKeyStore().setKey(data.value)
 
- setup() {
-    const isMobile = ref(false);
-    const mobileMenuOpen = ref(false);
+const isMobile = ref(false);
+const mobileMenuOpen = ref(false);
 
-    const toggleMobileMenu = () => {
-      mobileMenuOpen.value = !mobileMenuOpen.value;
-    };
-
-    const checkMobile = () => {
-      isMobile.value = window.innerWidth <= 768;
-    };
-
-
-    onMounted(() => {
-      checkMobile();
-      window.addEventListener('resize', checkMobile);
-      themeChange(false);
-    });
-
-    onBeforeUnmount(() => {
-      window.removeEventListener('resize', checkMobile);
-    });
-
-    return {
-      isMobile,
-      mobileMenuOpen,
-      toggleMobileMenu,
-    };
-  },
+const toggleMobileMenu = () => {
+  mobileMenuOpen.value = !mobileMenuOpen.value;
 };
+
+const checkMobile = () => {
+  isMobile.value = window.innerWidth <= 768;
+};
+
+onMounted(() => {
+  checkMobile();
+  window.addEventListener('resize', checkMobile);
+  themeChange(false);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', checkMobile);
+});
+
 </script>
 
 <style scoped lang="scss">

@@ -17,8 +17,6 @@ import LinkIcon from "/assets/image/link.svg"
 import 'highlight.js/styles/atom-one-dark.css'
 import {useBlogDetail} from "~/api/asyncApi/blog.js"
 import Clock from "assets/image/clock.vue";
-import {onMounted} from "vue";
-import {updateVisit} from "~/api/asyncApi/visit.js";
 
 const route = useRoute()
 const {id} = route.params

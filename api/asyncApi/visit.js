@@ -2,6 +2,7 @@ import service from "~/utils/request.js";
 import {useBrowserKeyStore} from "~/store/BrowserKeyStore.js";
 import encryption from "~/utils/encryption.js";
 import {useAESKeyStore} from "~/store/AESKeyStore.js";
+import FetchData from "~/utils/fetchData.js";
 
 /**
  * 访客请求api
@@ -24,10 +25,7 @@ function PostVisit(data) {
  * 获取加密接口访问key
  */
 export function GetAESKey() {
-    return service({
-        url: "/blog/blogVisit/getKey",
-        method: "GET",
-    })
+    return FetchData('blog/blogVisit/getKey', null, null);
 }
 
 export function updateVisit(pageUrl, blogId = "") {
